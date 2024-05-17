@@ -1,0 +1,9 @@
+[2024-05-16 22:40:30] [ ERROR] [OdontologoDaoH2:40] Tabla "ODONTOLOGOS" no encontrada
+Table "ODONTOLOGOS" not found; SQL statement:
+INSERT INTO ODONTOLOGOS (MATRICULA, NOMBRE, APELLIDO) VALUES (?, ?, ?) [42102-224]
+[2024-05-16 22:40:30] [ INFO ] [OdontologoDaoH2:45] Tuvimos un problema
+[2024-05-16 22:40:30] [ ERROR] [OdontologoDaoH2:46] Tabla "ODONTOLOGOS" no encontrada
+Table "ODONTOLOGOS" not found; SQL statement:
+INSERT INTO ODONTOLOGOS (MATRICULA, NOMBRE, APELLIDO) VALUES (?, ?, ?) [42102-224]
+[2024-05-16 22:41:07] [ INFO ] [OdontologoDaoH2:37] Se ha registrado el odontologo: Odontologo{id=2, numeroMatricula='2233', nombre='Alexandra', apellido='Lamadrid'}
+[2024-05-16 22:41:16] [ INFO ] [OdontologoDaoH2:78] Listado de todos los odontologos: [Odontologo{id=1, numeroMatricula='4568', nombre='P.', apellido='Sherman'}, Odontologo{id=2, numeroMatricula='2233', nombre='Alexandra', apellido='Lamadrid'}]

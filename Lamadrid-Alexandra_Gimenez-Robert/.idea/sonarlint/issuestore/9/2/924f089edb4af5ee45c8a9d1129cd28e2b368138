@@ -1,2 +1,8 @@
 
-k	java:S106"+Replace this use of System.out by a logger.(½ÚïúÿÿÿÿJ$91aa094f-9da9-442e-a1a1-c95e7b51d539
+e
+java:S2259"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ8ÕâÒ¡ø1
+J
+java:S4925	"-Remove this "Class.forName()", it is useless.(›‡ªœ8ÚâÒ¡ø1
+S
+java:S6437
+"6Revoke and change this password, as it is compromised.(¦ÁÃŸ8ÛâÒ¡ø1

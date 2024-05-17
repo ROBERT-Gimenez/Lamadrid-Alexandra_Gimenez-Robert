@@ -8,7 +8,4 @@ public interface IDao <T> {
         T buscarPorId(int id);
 
 
-
-
-
 }

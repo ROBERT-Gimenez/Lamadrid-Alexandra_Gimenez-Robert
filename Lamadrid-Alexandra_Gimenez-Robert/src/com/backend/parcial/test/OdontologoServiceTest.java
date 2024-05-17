@@ -13,6 +13,16 @@ class OdontologoServiceTest {
     private final OdontologoService odontologoService = new OdontologoService(new OdontologoDaoH2());
 
     @Test
+    public void deberiaAgregarUnOdontologo() {
+        Odontologo odontologo = new Odontologo("2233", "Alexandra", "Lamadrid");
+
+        Odontologo odontologoTest = odontologoService.guardarOdontologo(odontologo);
+
+        assertTrue(odontologoTest.getId() != 0);
+
+    }
+
+    @Test
     public void listarTodosLosOdonlogos() {
             List<Odontologo> odontologoList = odontologoService.listarOdontologos();
             assertFalse(odontologoList.isEmpty());

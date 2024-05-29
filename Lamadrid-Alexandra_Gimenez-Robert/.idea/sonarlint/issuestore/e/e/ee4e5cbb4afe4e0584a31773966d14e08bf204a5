@@ -1,4 +1,14 @@
 
+e
+java:S2259s"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ8ÐŽî¶ù1
+e
+java:S2259V"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ8ÑŽî¶ù1
+l
+java:S2095f"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¤Äèµ8ÔŽî¶ù1
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÐÕƒìúÿÿÿÿ8ÓŽî¶ù1
+q
+java:S2095G"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ðƒóúúÿÿÿÿ8ÓŽî¶ù1
 s
 java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ùÔäþÿÿÿÿ8°‘¸¡ø1
 A

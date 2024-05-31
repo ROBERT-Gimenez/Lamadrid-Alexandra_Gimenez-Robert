@@ -3,7 +3,7 @@ package com.backend.Clinica_Odontologica.dao.impl;
 
 import com.backend.Clinica_Odontologica.dao.H2Connection;
 import com.backend.Clinica_Odontologica.dao.IDao;
-import com.backend.Clinica_Odontologica.model.Domicilio;
+import com.backend.Clinica_Odontologica.entity.Domicilio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.sql.*;
@@ -28,7 +28,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
 
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO DOMICILIOS (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, domicilio.getCalle());
-            preparedStatement.setInt(2, domicilio.getNumero());
+            preparedStatement.setLong(2, domicilio.getNumero());
             preparedStatement.setString(3, domicilio.getLocalidad());
             preparedStatement.setString(4, domicilio.getProvincia());
             preparedStatement.execute();
@@ -120,7 +120,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                domicilio = new Domicilio(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5));
+                domicilio = new Domicilio(rs.getInt(1), rs.getString(2), rs.getLong(3), rs.getString(4), rs.getString(5));
             }
 
             if(domicilio == null) LOGGER.error("No se ha encontrado el domicilio con id: " + id);
@@ -143,7 +143,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
 
     private Domicilio crearObjetoDomicilio(ResultSet resultSet) throws SQLException {
 
-        return new Domicilio(resultSet.getInt("id"), resultSet.getString("calle"), resultSet.getInt("numero"),resultSet.getString("localidad"), resultSet.getString("provincia"));
+        return new Domicilio(resultSet.getInt("id"), resultSet.getString("calle"), resultSet.getLong("numero"),resultSet.getString("localidad"), resultSet.getString("provincia"));
 
     }
 }

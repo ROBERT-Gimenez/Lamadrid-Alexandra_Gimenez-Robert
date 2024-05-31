@@ -2,7 +2,7 @@ package com.backend.Clinica_Odontologica.dao.impl;
 
 import com.backend.Clinica_Odontologica.dao.H2Connection;
 import com.backend.Clinica_Odontologica.dao.IDao;
-import com.backend.Clinica_Odontologica.model.Odontologo;
+import com.backend.Clinica_Odontologica.entity.Odontologo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

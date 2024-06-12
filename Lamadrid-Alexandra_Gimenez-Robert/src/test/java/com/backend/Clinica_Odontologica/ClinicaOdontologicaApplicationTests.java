@@ -1,9 +1,8 @@
 package com.backend.Clinica_Odontologica;
 
-import com.backend.Clinica_Odontologica.dto.entrada.OdontologoEntradaDto;
 import com.backend.Clinica_Odontologica.dto.salida.OdontologoSalidaDto;
 import com.backend.Clinica_Odontologica.entity.Odontologo;
-import com.backend.Clinica_Odontologica.service.OdontologoService;
+import com.backend.Clinica_Odontologica.service.impl.OdontologoService;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 

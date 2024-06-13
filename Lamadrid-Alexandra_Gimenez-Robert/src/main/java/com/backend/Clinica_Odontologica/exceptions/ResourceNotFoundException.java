@@ -1,4 +1,4 @@
-package com.backend.Clinica_Odontologica.exeptions;
+package com.backend.Clinica_Odontologica.exceptions;
 
 public class ResourceNotFoundException  extends Exception{
     public ResourceNotFoundException(String message) {

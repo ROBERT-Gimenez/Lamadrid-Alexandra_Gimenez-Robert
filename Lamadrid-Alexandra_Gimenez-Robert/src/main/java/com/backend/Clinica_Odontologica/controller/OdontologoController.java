@@ -5,7 +5,7 @@ package com.backend.Clinica_Odontologica.controller;
 import com.backend.Clinica_Odontologica.dto.entrada.OdontologoEntradaDto;
 import com.backend.Clinica_Odontologica.dto.modificacion.OdontologoModificacionEntradaDto;
 import com.backend.Clinica_Odontologica.dto.salida.OdontologoSalidaDto;
-import com.backend.Clinica_Odontologica.exeptions.ResourceNotFoundException;
+import com.backend.Clinica_Odontologica.exceptions.ResourceNotFoundException;
 import com.backend.Clinica_Odontologica.service.IOdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

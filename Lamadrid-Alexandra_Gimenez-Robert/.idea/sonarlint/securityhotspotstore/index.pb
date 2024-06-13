@@ -3,12 +3,6 @@
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 Ç
 Rsrc/main/java/com/backend/Clinica_Odontologica/ClinicaOdontologicaApplication.java,1\a\1a04c22eddedefc13a1cff5076deec2acacb5f57
-t
-Dsrc/main/java/com/backend/Clinica_Odontologica/model/Odontologo.java,e\5\e509dc4a423778024dd63ce0f257210aecabbd1c
-s
-Csrc/main/java/com/backend/Clinica_Odontologica/model/Domicilio.java,2\7\277e34890a96c330a02a76047cb34852f46a309c
-r
-Bsrc/main/java/com/backend/Clinica_Odontologica/model/Paciente.java,4\b\4b96132785cc2034fa4ba50496dcf3f001175b80
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -22,8 +16,6 @@ l
 Lsrc/main/java/com/backend/Clinica_Odontologica/dao/impl/OdontologoDaoH2.java,f\a\fa752c95bbda2b3784cec1da846f00419d931fcc
 }
 Msrc/main/java/com/backend/Clinica_Odontologica/service/OdontologoService.java,9\8\987d58e041ad09fa2424fb0e01a4e36f24e4863a
-~
-Nsrc/main/java/com/backend/Clinica_Odontologica/test/OdontologoServiceTest.java,f\e\fe44a664e1adf4e143a7699d3fd736f4a01992bf
 á
 Wsrc/test/java/com/backend/Clinica_Odontologica/ClinicaOdontologicaApplicationTests.java,c\7\c7898f6fc9875ea0b6f8ad6461e9983d1d7c6090
 :
@@ -55,3 +47,19 @@ Qsrc/main/java/com/backend/Clinica_Odontologica/dto/salida/DomicilioSalidaDto.ja
 Msrc/main/java/com/backend/Clinica_Odontologica/dto/salida/TurnoSalidaDto.java,7\2\725043fab1308eb1358f0fdfe575a19714d872ad
 Ñ
 Tsrc/main/java/com/backend/Clinica_Odontologica/dto/entrada/OdontologoEntradaDto.java,b\4\b4c670165f1b423160b93c7d4a42b6d1f37ad0b3
+ï
+esrc/main/java/com/backend/Clinica_Odontologica/dto/modificacion/OdontologoModificacionEntradaDto.java,9\9\99f7ed9d8a640a2f766b04806aa5fdc7359be6dc
+É
+Ssrc/main/java/com/backend/Clinica_Odontologica/repository/OdontologoRepository.java,e\3\e3223c2a3f1d54c3021825f269ece02f015fcd25
+Ç
+Rsrc/main/java/com/backend/Clinica_Odontologica/service/impl/OdontologoService.java,c\f\cf938c9a60a0d1ecd2827771efe868ee4b549c15
+É
+Ssrc/main/java/com/backend/Clinica_Odontologica/controller/OdontologoController.java,6\7\6782c5c4054a138f65738c4c5f5a4febdbd8833b
+Å
+Qsrc/main/java/com/backend/Clinica_Odontologica/exeptions/BadRequestException.java,3\e\3e2c0f07eb589e6f66a63d112faa4eff7bd71fc4
+Ñ
+Tsrc/main/java/com/backend/Clinica_Odontologica/exeptions/GlobalExceptionHandler.java,3\e\3ece6bdba27c8941d4513775448d982b3a89326d
+á
+Wsrc/main/java/com/backend/Clinica_Odontologica/exeptions/ResourceNotFoundException.java,1\7\1783febad9aad4686c87d4c77a08f7bb62a002de
+~
+Nsrc/main/java/com/backend/Clinica_Odontologica/service/IOdontologoService.java,1\a\1a07907abf28563bc4037d050cc08190d17f3e29

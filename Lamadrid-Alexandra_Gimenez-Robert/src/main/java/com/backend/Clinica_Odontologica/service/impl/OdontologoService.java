@@ -5,6 +5,7 @@ import com.backend.Clinica_Odontologica.dto.entrada.OdontologoEntradaDto;
 import com.backend.Clinica_Odontologica.dto.modificacion.OdontologoModificacionEntradaDto;
 import com.backend.Clinica_Odontologica.dto.salida.OdontologoSalidaDto;
 import com.backend.Clinica_Odontologica.entity.Odontologo;
+import com.backend.Clinica_Odontologica.exeptions.ResourceNotFoundException;
 import com.backend.Clinica_Odontologica.repository.OdontologoRepository;
 import com.backend.Clinica_Odontologica.service.IOdontologoService;
 import org.modelmapper.ModelMapper;
@@ -45,20 +46,20 @@ public class OdontologoService implements IOdontologoService {
         return odontologoSalidaDto;
     }
 
-    public List<OdontologoSalidaDto> ListarOdontologos() {
+    public List<OdontologoSalidaDto> listarOdontologos() {
         List<OdontologoSalidaDto> odontologos = odontologoRepository.findAll().stream()
                 .map(od -> modelMapper.map(od, OdontologoSalidaDto.class)).toList();
         LOGGER.info("Listado de todos los odontologos: ", odontologos);
         return odontologos;
     }
 
-    public void eliminarOdontologo(Long id) {
-        if(buscarOdontologoporId(id) != null) {
+    public void eliminarOdontologo(Long id) throws ResourceNotFoundException {
+        if(buscarOdontologoPorId(id) != null) {
             odontologoRepository.deleteById(id);
             LOGGER.warn("Se ha eliminado el odonologo con ID: ", id);
         }else{
             LOGGER.error("No se ha encontrado el odontologo con id: " , id);
-            //Retornar ExceptionNotFound
+            throw new ResourceNotFoundException("No se ha encontrado el odontologo con id " + id);
         }
     }
 
@@ -79,6 +80,6 @@ public class OdontologoService implements IOdontologoService {
     }
 
     private Odontologo dtoEntradaAEntidad(OdontologoEntradaDto odontologoEntradaDto) {
-        return ModelMapper.map(odontologoEntradaDto, Odontologo.class);
+        return modelMapper.map(odontologoEntradaDto, Odontologo.class);
     }
 }

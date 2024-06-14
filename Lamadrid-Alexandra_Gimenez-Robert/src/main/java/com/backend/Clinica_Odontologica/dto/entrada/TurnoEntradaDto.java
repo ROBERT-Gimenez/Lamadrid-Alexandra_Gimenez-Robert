@@ -1,31 +1,51 @@
 package com.backend.Clinica_Odontologica.dto.entrada;
 
-import com.backend.Clinica_Odontologica.dto.salida.OdontologoSalidaDto;
-import com.backend.Clinica_Odontologica.dto.salida.PacienteSalidaDto;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+
+
 public class TurnoEntradaDto {
-    @FutureOrPresent(message = "La fecha no puede ser anterior al día de hoy")
+
+    @NotNull(message = "El paciente no puede ser nulo")
+    private Long pacienteId;
+
+    @NotNull(message = "El odontologo no puede ser nulo")
+    private Long odontologoId;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm")
+    @FutureOrPresent(message = "La fecha no puede ser anterior al día de hoy")
+    @NotNull(message = "Debe especificarse la fecha y hora del turno")
     private LocalDateTime fechaYHora;
 
-    @NotNull(message = "El apellido del odontologo no puede ser nulo")
-    private OdontologoSalidaDto odontologo;
-    @NotNull(message = "El apellido del paciente no puede ser nulo")
-    private PacienteSalidaDto paciente;
-
-    public TurnoEntradaDto(){
-
+    public TurnoEntradaDto(Long pacienteId, Long odontologoId, LocalDateTime fechaYHora) {
+        this.pacienteId = pacienteId;
+        this.odontologoId = odontologoId;
+        this.fechaYHora = fechaYHora;
+    }
+    //constructor vacio
+    public TurnoEntradaDto() {
     }
 
-    public TurnoEntradaDto(LocalDateTime fechaYHora, OdontologoSalidaDto odontologo, PacienteSalidaDto paciente) {
-        this.fechaYHora = fechaYHora;
-        this.odontologo = odontologo;
-        this.paciente = paciente;
+    public Long getPacienteId() {
+        return pacienteId;
+    }
+
+    public void setPacienteId(Long pacienteId) {
+        this.pacienteId = pacienteId;
+    }
+
+    public Long getOdontologoId() {
+        return odontologoId;
+    }
+
+    public void setOdontologoId(Long odontologoId) {
+        this.odontologoId = odontologoId;
     }
 
     public LocalDateTime getFechaYHora() {
@@ -34,21 +54,5 @@ public class TurnoEntradaDto {
 
     public void setFechaYHora(LocalDateTime fechaYHora) {
         this.fechaYHora = fechaYHora;
-    }
-
-    public OdontologoSalidaDto getOdontologo() {
-        return odontologo;
-    }
-
-    public void setOdontologo(OdontologoSalidaDto odontologo) {
-        this.odontologo = odontologo;
-    }
-
-    public PacienteSalidaDto getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(PacienteSalidaDto paciente) {
-        this.paciente = paciente;
     }
 }

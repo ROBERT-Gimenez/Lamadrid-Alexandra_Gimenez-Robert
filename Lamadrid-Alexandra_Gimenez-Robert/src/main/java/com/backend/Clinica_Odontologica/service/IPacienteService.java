@@ -1,6 +1,6 @@
 package com.backend.Clinica_Odontologica.service;
 
-import com.backend.Clinica_Odontologica.dto.modificacion.pacienteModificacionEntradaDto;
+import com.backend.Clinica_Odontologica.dto.modificacion.PacienteModificacionEntradaDto;
 import com.backend.Clinica_Odontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.Clinica_Odontologica.dto.salida.PacienteSalidaDto;
 import com.backend.Clinica_Odontologica.exceptions.ResourceNotFoundException;
@@ -14,11 +14,9 @@ public interface IPacienteService {
 
     PacienteSalidaDto buscarPacientePorId(Long id);
 
-
-
     void eliminarPaciente(Long id) throws ResourceNotFoundException;
 
-    PacienteSalidaDto modificarPaciente(pacienteModificacionEntradaDto pacienteModificado) throws ResourceNotFoundException;
+    PacienteSalidaDto modificarPaciente(PacienteModificacionEntradaDto pacienteModificado) throws ResourceNotFoundException;
 
 
 

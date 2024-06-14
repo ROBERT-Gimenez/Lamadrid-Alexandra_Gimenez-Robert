@@ -1,7 +1,6 @@
 package com.backend.Clinica_Odontologica.dto.salida;
 
-import com.backend.Clinica_Odontologica.entity.Odontologo;
-import com.backend.Clinica_Odontologica.entity.Paciente;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,17 +13,13 @@ import java.time.LocalDateTime;
 public class TurnoSalidaDto {
 
     private Long id;
+    private PacienteTurnoSalidaDto pacienteTurnoSalidaDto;
+    private OdontologoTurnoSalidaDto odontologoTurnoSalidaDto;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime fechaYHora;
-    private Odontologo odontologo;
-    private Paciente paciente;
-
+    
     @Override
     public String toString() {
-        return "TurnoSalidaDto{" +
-                "id=" + id +
-                ", fechaYHora=" + fechaYHora +
-                ", odontologo=" + odontologo +
-                ", paciente=" + paciente +
-                '}';
+        return "Id: " + id + " - Paciente: " + pacienteTurnoSalidaDto + " - Odontologo: " + odontologoTurnoSalidaDto + " - Fecha y hora: " + fechaYHora;
     }
 }

@@ -1,6 +1,6 @@
 package com.backend.Clinica_Odontologica.service.impl;
 
-import com.backend.Clinica_Odontologica.dto.modificacion.pacienteModificacionEntradaDto;
+import com.backend.Clinica_Odontologica.dto.modificacion.PacienteModificacionEntradaDto;
 import com.backend.Clinica_Odontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.Clinica_Odontologica.dto.salida.PacienteSalidaDto;
 import com.backend.Clinica_Odontologica.entity.Paciente;
@@ -51,8 +51,6 @@ public class PacienteService implements IPacienteService {
     }
 
 
-
-
     @Override
     public List<PacienteSalidaDto> listarPacientes(){
 
@@ -76,8 +74,9 @@ public class PacienteService implements IPacienteService {
         }
     }
 
+
     @Override
-    public PacienteSalidaDto modificarPaciente(pacienteModificacionEntradaDto pacienteModificado) throws ResourceNotFoundException {
+    public PacienteSalidaDto modificarPaciente(PacienteModificacionEntradaDto pacienteModificado) throws ResourceNotFoundException {
         Paciente pacienteRecibido = dtoModificadoAEntidad(pacienteModificado);
         Paciente pacienteAActualizar = pacienteRepository.findById(pacienteModificado.getId()).orElse(null);
         PacienteSalidaDto pacienteSalidaDto = null;
@@ -96,30 +95,38 @@ public class PacienteService implements IPacienteService {
             throw new ResourceNotFoundException("No fue posible actualizar los datos ya que el paciente no se encuentra registrado");
         }
 
-
         return pacienteSalidaDto;
-
     }
+
 
     private void configureMapping() {
         modelMapper.typeMap(PacienteEntradaDto.class, Paciente.class)
-                .addMappings(mapper -> mapper.map(PacienteEntradaDto::getDomicilio, Paciente::setDomicilio));
-        modelMapper.typeMap(Paciente.class, PacienteSalidaDto.class)
-                .addMappings(mapper -> mapper.map(Paciente::getDomicilio, PacienteSalidaDto::setDomicilio));
-        modelMapper.typeMap(pacienteModificacionEntradaDto.class, Paciente.class)
-                .addMappings(mapper -> mapper.map(pacienteModificacionEntradaDto::getDomicilio, Paciente::setDomicilio));
+                .addMappings(mapper -> {
+                    mapper.map(PacienteEntradaDto::getDomicilio, Paciente::setDomicilio);
+                });
 
+        modelMapper.typeMap(PacienteModificacionEntradaDto.class, Paciente.class)
+                .addMappings(mapper -> {
+                    mapper.map(PacienteModificacionEntradaDto::getDomicilio, Paciente::setDomicilio);
+                });
+
+        modelMapper.typeMap(Paciente.class, PacienteSalidaDto.class)
+                .addMappings(mapper -> {
+                    mapper.map(Paciente::getDomicilio, PacienteSalidaDto::setDomicilio);
+                });
     }
+
 
     private Paciente dtoEntradaAEntidad(PacienteEntradaDto pacienteEntradaDto) {
-        return modelMapper.map(pacienteEntradaDto, Paciente.class);
-    }
-
-    public Paciente dtoModificadoAEntidad(pacienteModificacionEntradaDto pacienteEntradaDto) {
         return modelMapper.map(pacienteEntradaDto, Paciente.class);
     }
 
     private PacienteSalidaDto entidadADtoSalida(Paciente paciente) {
         return modelMapper.map(paciente, PacienteSalidaDto.class);
     }
+
+    public Paciente dtoModificadoAEntidad(PacienteModificacionEntradaDto pacienteEntradaDto) {
+        return modelMapper.map(pacienteEntradaDto, Paciente.class);
+    }
+
 }

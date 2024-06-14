@@ -16,9 +16,9 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5500")
-@RequestMapping("/odontologos")
-public class    OdontologoController {
+@RequestMapping("odontologos")
+@CrossOrigin
+public class  OdontologoController {
 
     private final IOdontologoService odontologoService;
 
@@ -29,22 +29,23 @@ public class    OdontologoController {
     }
 
     //POST
-    @PostMapping("registrar")
+    @PostMapping("/registrar")
     public ResponseEntity<OdontologoSalidaDto> registrarOdontologo(@Valid @RequestBody OdontologoEntradaDto odontologo) {
         return new ResponseEntity<>(odontologoService.registrarOdontologo(odontologo), HttpStatus.CREATED);
     }
 
     //PUT
-    @PutMapping("actualizar")
+    @PutMapping("/actualizar")
     public ResponseEntity<OdontologoSalidaDto> actualizarOdontologo(@Valid @RequestBody OdontologoModificacionEntradaDto odontologo)throws ResourceNotFoundException {
         return new ResponseEntity<>(odontologoService.actualizarOdontologo(odontologo), HttpStatus.OK);
     }
 
     //GET
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<OdontologoSalidaDto> obtenerOdontologoPorId(@PathVariable Long id) {
         return new ResponseEntity<>(odontologoService.buscarOdontologoPorId(id), HttpStatus.OK);
     }
+
 
     @GetMapping()
     public ResponseEntity<List<OdontologoSalidaDto>> listarOdontologos() {
@@ -52,7 +53,7 @@ public class    OdontologoController {
     }
 
     //DELETE
-    @DeleteMapping("eliminar/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarOdontologo(@PathVariable Long id) throws ResourceNotFoundException {
         odontologoService.eliminarOdontologo(id);
         return new ResponseEntity<>("Odontologo eliminado correctamente", HttpStatus.NO_CONTENT);

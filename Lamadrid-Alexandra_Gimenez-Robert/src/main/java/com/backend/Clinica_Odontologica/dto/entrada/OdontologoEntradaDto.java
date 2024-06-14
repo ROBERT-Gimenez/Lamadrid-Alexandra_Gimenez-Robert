@@ -18,7 +18,7 @@ public class OdontologoEntradaDto {
 
     @NotNull(message = "La matricula no puede ser nula")
     @NotBlank(message = "Debe especificarse la matricula del odontologo")
-    @Pattern(regexp = "^[A-Z]{2}-\\d{1,3}\\d*$")
+    @Pattern(regexp = "^[A-Z]{2}-\\d{1,3}\\d*$" , message = "Formato invalido , ej:AS-4589304")
     @Size(min = 10, message = "El campo debe tener mínimo 10 caracteres")
     private String matricula;
 

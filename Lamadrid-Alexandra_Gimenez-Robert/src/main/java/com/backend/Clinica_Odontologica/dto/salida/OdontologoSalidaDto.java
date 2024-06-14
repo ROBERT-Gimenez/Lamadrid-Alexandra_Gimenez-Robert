@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class OdontologoSalidaDto {
     private Long id;
-    private int matricula;
+    private String matricula;
     private String nombre;
     private String apellido;
 }

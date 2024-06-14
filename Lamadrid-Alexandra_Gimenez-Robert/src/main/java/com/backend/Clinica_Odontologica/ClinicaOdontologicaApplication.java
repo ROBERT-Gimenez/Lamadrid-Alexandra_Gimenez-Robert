@@ -8,9 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;
 import org.modelmapper.ModelMapper;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-
 
 @SpringBootApplication
 @RestController
